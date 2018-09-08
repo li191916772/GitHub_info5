@@ -25,3 +25,9 @@ def create_app(config_name):
     CSRFProtect(app)
     # 配置Session
     Session(app)
+
+    # 注册index蓝图
+    from info.modules.index import index_blu
+    app.register_blueprint(index_blu)
+
+    return app
